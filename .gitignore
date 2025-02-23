@@ -1,5 +1,5 @@
 .venv
-.vscode/*
+!/.vscode/
 ./pybricks-api/
 desktop.ini
 __pycache__
