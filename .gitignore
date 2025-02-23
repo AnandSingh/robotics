@@ -3,3 +3,5 @@
 ./pybricks-api/
 desktop.ini
 __pycache__
+
+!/.gitignore
