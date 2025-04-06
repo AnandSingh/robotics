@@ -23,8 +23,12 @@ git config --global user.email  "asingh.sqm@gmail.com"
 
 ### Adding a keyboard shortcuts
  Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
-[ { "key" : "ctrl+shift+l", "command" : "workbench.action.tasks.runTask", "args": "Execute-on-Robot" } ]
 
 ```
 [ { "key" : "ctrl+shift+l", "command" : "workbench.action.tasks.runTask", "args": "Run-on-Robot" } ]
 ```
+
+## Run program on robot
+
+* Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program.
+* Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
