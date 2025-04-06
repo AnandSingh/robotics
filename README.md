@@ -20,3 +20,11 @@ git config --global pull.ff false
 git config --global user.name  "Anand Singh"
 git config --global user.email  "asingh.sqm@gmail.com"
 ```
+
+### Adding a keyboard shortcuts
+ Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
+[ { "key" : "ctrl+shift+l", "command" : "workbench.action.tasks.runTask", "args": "Execute-on-Robot" } ]
+
+```
+[ { "key" : "ctrl+shift+l", "command" : "workbench.action.tasks.runTask", "args": "Run-on-Robot" } ]
+```

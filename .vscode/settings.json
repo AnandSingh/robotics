@@ -13,12 +13,7 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
-    "codetogether.virtualCursorJoin": "sharedVirtualCursor",
     "editor.rulers": [
         80
-    ],
-    "black-formatter.args": [
-        "--line-length",
-        "79"
     ]
 }
