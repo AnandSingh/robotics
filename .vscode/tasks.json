@@ -2,14 +2,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run-on-Robot",
+            "label": "Run-on-my-robot",
             "type": "shell",
             "command": "pybricksdev",
             "args": [
                 "run",
                 "ble",
                 "--name",
-                "${env:robotName}",
+                "Jolly",
                 "${file}"
             ],
             "problemMatcher": {
@@ -34,7 +34,7 @@
             }
         },
         {
-            "label": "Run main_program.py on robot",
+            "label": "Run master_program.py on my robot",
             "type": "shell",
             "command": "pybricksdev",
             "args": [
@@ -68,9 +68,9 @@
         {
             "label": "git pull on startup",
             "type": "shell",
-            "command": "${fileWorkspaceFolder}\\.vscode\\gitpull.cmd",
-            "linux": {
-                "command": "sh ${fileWorkspaceFolder}\\.vscode\\gitpull.sh"
+            "command": "python ${fileWorkspaceFolder}\\.vscode\\gitpull.py",
+            "windows": {
+                "command": "python ${fileWorkspaceFolder}\\.vscode\\gitpull.py"
             },
             "presentation": {
                 "reveal": "always",
@@ -114,7 +114,7 @@
             }
         },
         {
-            "label": "Run main_program.py on any robot",
+            "label": "Run master_program.py on alt robot",
             "type": "shell",
             "command": "pybricksdev",
             "args": [
@@ -152,8 +152,8 @@
             "id": "robotName",
             "description": "Which Robot?",
             "options": [
-                "Wally",
-                "Jolly"
+                "Jolly",
+                "Wally"
             ]
         }
     ]

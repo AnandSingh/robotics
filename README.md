@@ -25,7 +25,28 @@ git config --global user.email  "asingh.sqm@gmail.com"
  Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
 
 ```
-[ { "key" : "ctrl+shift+l", "command" : "workbench.action.tasks.runTask", "args": "Run-on-Robot" } ]
+[
+    {
+        "key" : "ctrl+shift+l",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run on robot"
+    },
+    {
+        "key" : "ctrl+alt+l",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run on any robot"
+    },
+    {
+        "key" : "ctrl+shift+9",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run master_program.py on robot"
+    },
+    {
+        "key" : "ctrl+alt+9",
+        "command" : "workbench.action.tasks.runTask",
+        "args": "Run master_program.py on any robot"
+    }
+]
 ```
 
 ## Run program on robot
