@@ -4,13 +4,11 @@
         {
             "label": "Run-on-my-robot",
             "type": "shell",
-            "command": "pybricksdev",
+            "command": "/bin/bash",
             "args": [
-                "run",
-                "ble",
-                "--name",
-                "Jolly",
-                "${file}"
+              "-l",
+              "-c",
+              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/robotName.sh ${file}"
             ],
             "problemMatcher": {
                 "owner": "python",
