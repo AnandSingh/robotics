@@ -3,14 +3,19 @@ from NexusAttachement import *
 
 
 def run_mission(robo, arm):
-    # robo.straight_drive(100)
+
     print("test")
-    arm.move_left(300)
-    arm.move_right(300)
+    robo.straight_drive(-320)   
+    arm.move_left(300)  
+    #arm.move_left_time(20)
+    robo.straight_drive(350)
+    arm.move_left(-350)      
+    #arm.move_left_time(20)
+
+    
+    
+    # arm.move_right(-300)
     # arm.move_right_time(300)
-
-    # arm.move_left_time(40)
-
     # robo.pivot_turn(-76)
     # robo.straight_drive(940)
     # robo.straight_drive(-940)
