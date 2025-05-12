@@ -1,3 +1,5 @@
 [pull]
 	ff = true
 	rebase = false
+[commit]
+    allowEmssss
