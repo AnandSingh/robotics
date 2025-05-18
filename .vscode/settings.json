@@ -9,6 +9,7 @@
     },
     "task.allowAutomaticTasks": "on",
     "git.postCommitCommand": "sync",
+    "security.workspace.trust.enabled": false,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
