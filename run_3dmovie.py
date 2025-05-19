@@ -6,10 +6,21 @@ def run_mission(robo, arm):
     robo.straight_drive(-320)
     arm.move_left(-250)
 
-    robo.straight_drive(160)
+    robo.straight_drive(80)
     arm.move_left(250)
-    robo.pivot_turn(-90)
-
+    robo.pivot_turn(-60)
+    robo.straight_drive(-225)
+    robo.pivot_turn(45)
+    robo.straight_drive(-390)
+    robo.pivot_turn(60)
+    robo.straight_drive(15)
+    arm.move_left(-270)
+    robo.straight_drive(15)
+    arm.move_left(250)
+    arm.move_left(-250)
+    
+    
+    
     robo.brake()
 
 
