@@ -45,7 +45,7 @@ class NexusAttachement:
         self.left.stop()
         self.left.reset_angle(0)
 
-    async def move_right_angle_async(
+    async def move_right_async(
         self,
         angle=0,
         speed_percentage=DEFAULT_ATTACHEMNET_SPEED_PERCENTAGE,

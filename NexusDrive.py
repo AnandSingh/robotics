@@ -11,8 +11,8 @@ class NexusDrive:
     def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
         # Initialize both motors. In this example, the motor on the
         # left must turn counterclockwise to make the robot go forward.
-        self.left_motor = Motor(Port.C)
-        self.right_motor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+        self.left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+        self.right_motor = Motor(Port.D)
         self.log_enabled = ENABLE_LOGS
         # Initialize the drive base. In this example, the wheel diameter is 56mm.
         # The distance between the two wheel-ground contact points is 112mm.
@@ -22,7 +22,7 @@ class NexusDrive:
             wheel_diameter=WHEEL_DIAMETER,
             axle_track=AXLE_TRACK,
         )
-        print("using Gyro=",ENABLE_GYRO)
+        print("using Gyro=", ENABLE_GYRO)
         self.use_gyro(ENABLE_GYRO)
         self.set_speed_percentage()
 
@@ -51,7 +51,12 @@ class NexusDrive:
     """
 
     def straight_drive(self, distance=0, wait=True):
+        print("drive=", distance)
         self.drive_base.straight(distance, then=Stop.BRAKE, wait=wait)
+
+    async def straight_drive_async(self, distance=0, wait=True):
+        print("async: drive=", distance)
+        await self.drive_base.straight(distance, then=Stop.BRAKE, wait=wait)
 
     def turn_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
