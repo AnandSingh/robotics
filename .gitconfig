@@ -1,5 +1,4 @@
 [pull]
-	ff = true
-	rebase = false
+	rebase = true
 [commit]
     allowEmptyMessage = true
