@@ -8,12 +8,12 @@ from NexusHelper import *
 
 
 class NexusDrive:
-    def __init__(self, ENABLE_GYRO=True, ENABLE_LOGS=False):
+    def __init__(self, ENABLE_GYRO=True, ENABLE_LOGING=False):
         # Initialize both motors. In this example, the motor on the
         # left must turn counterclockwise to make the robot go forward.
         self.left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
         self.right_motor = Motor(Port.D)
-        self.log_enabled = ENABLE_LOGS
+        self.loging_enabled = ENABLE_LOGING
         # Initialize the drive base. In this example, the wheel diameter is 56mm.
         # The distance between the two wheel-ground contact points is 112mm.
         self.drive_base = DriveBase(
@@ -25,14 +25,16 @@ class NexusDrive:
         print("using Gyro=", ENABLE_GYRO)
         self.use_gyro(ENABLE_GYRO)
         self.set_speed_percentage()
-
-        # add attachement motor
-        # TODO:
+        self.reset(0, 0)
 
         # add color sensor
         # TODO:
         # self.e_color=ColorSensor(Port.E)
         # self.f_color=ColorSensor(Port.F)
+
+    def data_logging():
+        if loging_enabled:
+            print(self.state)
 
     def stop(self):
         self.drive_base.stop()
@@ -50,15 +52,17 @@ class NexusDrive:
     drive the robot straight to spcified distance 
     """
 
-    def straight_drive(self, distance=0, wait=True):
+    def drive(self, distance=0, wait=True):
         print("drive=", distance)
         self.drive_base.straight(distance, then=Stop.BRAKE, wait=wait)
+        data_logging()
 
-    async def straight_drive_async(self, distance=0, wait=True):
+    async def async_drive(self, distance=0, wait=True):
         print("async: drive=", distance)
         await self.drive_base.straight(distance, then=Stop.BRAKE, wait=wait)
+        data_logging()
 
-    def turn_drive(self, speed, turn_rate, time_millis):
+    def keep_drive(self, speed, turn_rate, time_millis):
         self.drive_base.drive(speed, turn_rate)
         wait(time_millis)
 
@@ -69,10 +73,14 @@ class NexusDrive:
     """
 
     def pivot_turn(self, angle, wait=True):
-        self.drive_base.turn(angle, then=Stop.HOLD, wait=wait)
+        self.drive_base.turn(angle, then=Stop.HOLD, wait=wait) 
+        data_logging()
+
 
     def curve_trun(self, radius, angle, wait=True):
-        self.drive_base.curve(radius, angle, then=Stop.HOLD, wait=wait)
+        self.drive_base.arc(radius, angle, then=Stop.HOLD, wait=wait)
+        data_logging()
+
 
     def get_speed_raw(self):
         settings = self.drive_base.settings()
