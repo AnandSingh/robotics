@@ -129,7 +129,7 @@
         {
             "label": "git pull on startup",
             "type": "shell",
-            "command": "python3 ${workspaceFolder}/.vscode/gitpull.py",
+            "command": "bash ${workspaceFolder}/.vscode/gitpull.sh",
             "windows": {
                 "command": "python3 ${workspaceFolder}/.vscode/gitpull.py"
             },
