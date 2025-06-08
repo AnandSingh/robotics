@@ -7,7 +7,7 @@ def move_to_light_show(robo, arm):
     robo.pivot_turn(-94)
     robo.drive(610)
     robo.pivot_turn(91)
-    robo.drive(50)
+    robo.drive(49)
     robo.pivot_turn(5)
 
 
