@@ -7,7 +7,7 @@ YELLOW='\033[0;33m'
 
 NC='\033[0m' # No Color (reset)
 
-robotName=$(cat /config/workspace/MY_ROBOT_NAME)
+robotName=$(cat /config/workspace/.robotName)
 
 export ROBOT_NAME=$robotName
 
