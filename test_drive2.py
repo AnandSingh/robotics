@@ -1,5 +1,4 @@
 from NexusDrive import *
-from NexusAttachment import *
 
 
 robo = NexusDrive(ENABLE_LOGING=True)
