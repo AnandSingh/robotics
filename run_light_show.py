@@ -23,7 +23,8 @@ def go_back_to_home(robo, arm):
     robo.drive(-150)
     robo.pivot_turn(94)
     robo.drive(530)
-    robo.pivot_turn(49)
+    robo.pivot_turn(45)
+    robo.drive(-50)
 
 
 if __name__ == "__main__":
