@@ -1,8 +1,9 @@
 from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Direction
+from pybricks.parameters import Port, Direction, Axis
 from pybricks.robotics import DriveBase
 from pybricks.parameters import Stop, Color, Button
-from pybricks.tools import wait, multitask, run_task
+from pybricks.tools import wait, multitask, run_task, StopWatch
+from pybricks.hubs import PrimeHub
 from NexusConstant import *
 from NexusHelper import *
 
@@ -24,7 +25,10 @@ class NexusDrive:
         )
         print("using Gyro=", ENABLE_GYRO)
         self.use_gyro(ENABLE_GYRO)
+        self.hub = PrimeHub()
         self.set_speed_percentage()
+        self.watch = StopWatch()
+        self.watch.reset()
         # self.reset(0, 0)
 
         # add color sensor
@@ -35,6 +39,18 @@ class NexusDrive:
     def data_logging():
         if loging_enabled:
             print(self.state)
+
+    def log_data(self, note=""):
+        # if not self.logs_enabled:
+        #        return
+
+        time_now = self.watch.time()
+        angle_l = self.left_motor.angle()
+        angle_r = self.right_motor.angle()
+
+        yaw = self.hub.imu.heading()
+        yaw_rate = self.hub.imu.angular_velocity(Axis.Z)
+        print(time_now, angle_l, angle_r, yaw, yaw_rate, note)
 
     def stop(self):
         self.drive_base.stop()
@@ -53,8 +69,10 @@ class NexusDrive:
     """
 
     def drive(self, distance=0, wait=True):
-        print("drive=", distance)
+        # print("drive=", distance)
+        self.log_data()
         self.drive_base.straight(distance, then=Stop.BRAKE, wait=wait)
+        self.log_data()
         # data_logging()
 
     async def drive_async(self, distance=0, wait=True):
