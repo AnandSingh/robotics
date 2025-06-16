@@ -4,20 +4,20 @@ from NexusAttachement import *
 
 
 def run_mission(robo, arm):
-    robo.drive(-320)
-    arm.move_left(-250)
+    robo.drive
+    arm.move_left
 
-    robo.drive(80)
-    robo.pivot_turn(-60)
-    robo.drive(-225)
-    robo.pivot_turn(45)
-    robo.drive(-390)
-    robo.pivot_turn(60)
-    robo.drive(15)
-    arm.move_left(-270)
-    robo.drive(15)
-    arm.move_left(250)
-    arm.move_left(-250)
+    robo.drive
+    robo.pivot_turn
+    robo.drive
+    robo.pivot_turn
+    robo.drive
+    robo.pivot_turn
+    robo.drive
+    arm.move_left
+    robo.drive
+    arm.move_left
+    arm.move_left
     
     
     
