@@ -36,6 +36,14 @@ class NexusDrive:
         # self.e_color=ColorSensor(Port.E)
         # self.f_color=ColorSensor(Port.F)
 
+    def log_data(self,  note=""):
+        if not self.logs_enabled:
+            return
+        # Access the IMU data for yaw  (angle around the Z=axis)
+        yaw_rate = self.hub.imu.angular_velocity(Axis.Z) 
+        #print("Yaw Angle:", yaw)
+
+        # Access the angular velocity (rate of rotation)
     def data_logging():
         if loging_enabled:
             print(self.state)
