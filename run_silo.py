@@ -5,7 +5,9 @@ from NexusAttachement import *
 def run_mission(robo, arm):
     robo.set_speed_percentage(speed_percentage=50)
 
-    robo.drive(-150)
+    robo.drive(-500)
+    robo.pivot_turn(-30)
+
     """
     robo.drive(340)
     arm.move_left(-250)  # pull down 3Dmovie
