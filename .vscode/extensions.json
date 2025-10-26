@@ -2,6 +2,12 @@
     "recommendations": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "AnandSingh.pybricks-runner"
+        "AnandSingh.pybricks-runner",
+        "vscode-icons-team.vscode-icons",
+        "ms-python.black-formatter",
+        "GitHub.vscode-pull-request-github",
+        "shyykoserhiy.git-autoconfig",
+        "usernamehw.errorlens",
+        "tomoki1207.pdf"
     ]
 }

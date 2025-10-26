@@ -13,7 +13,7 @@
     "git.postCommitCommand": "sync",
     "security.workspace.trust.enabled": false,
     // Python global configuration
-    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.defaultInterpreterPath": "/home/dev/.pyenv/versions/ffl-python/bin/python",
     "python.analysis.typeCheckingMode": "basic",
     "python.formatting.provider": "black",
     // Editor behavior

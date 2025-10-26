@@ -2,13 +2,33 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "python: update global env (ffl-python)",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+                "-lc",
+                "source /home/dev/.pyenv/versions/ffl-python/bin/activate && pip install -U pip setuptools wheel && [ -f requirements.txt ] && pip install -r requirements.txt || true"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python: bootstrap global env (create if missing)",
+            "type": "shell",
+            "command": "/bin/bash",
+            "args": [
+                "-lc",
+                "if ! pyenv versions --bare | grep -qx 'ffl-python'; then pyenv install -s 3.12.6 && pyenv virtualenv 3.12.6 ffl-python; fi && source /home/dev/.pyenv/versions/ffl-python/bin/activate && pip install -U pip setuptools wheel"
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "Run-on-my-robot",
             "type": "shell",
             "command": "/bin/bash",
             "args": [
-              "-l",
-              "-c",
-              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/.robotName ${file}"
+                "-l",
+                "-c",
+                "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/.robotName ${file}"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -36,9 +56,9 @@
             "type": "shell",
             "command": "/bin/bash",
             "args": [
-              "-l",
-              "-c",
-              "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/.robotName ${workspaceFolder}/master_program.py"
+                "-l",
+                "-c",
+                "${workspaceFolder}/.vscode/runRobot.sh ${workspaceFolder}/.robotName ${workspaceFolder}/master_program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -61,7 +81,6 @@
                 "revealProblems": "onProblem"
             }
         },
-      
         {
             "label": "Run-on-any-robot",
             "type": "shell",
@@ -154,5 +173,4 @@
             ]
         }
     ],
-    
 }
