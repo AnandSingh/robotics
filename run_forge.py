@@ -4,16 +4,8 @@ from NexusAttachement import *
 
 def run_mission(robo, arm):
    robo.set_speed_percentage(speed_percentage=50)
-    
-    
-   
-    
-    
-    
-    
 
-
-    """
+"""
     robo.drive(-500)
     robo.pivot_turn(-45)
     robo.drive(-70)
