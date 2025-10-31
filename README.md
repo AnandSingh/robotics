@@ -56,3 +56,5 @@ git config --global user.email  "asingh.sqm@gmail.com"
 
 ## mountind bluetooth usb to lxc container
 https://medium.com/@konpat/usb-passthrough-to-an-lxc-proxmox-15482674f11d
+
+## push from coder
