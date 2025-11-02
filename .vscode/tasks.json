@@ -162,15 +162,18 @@
     {
       "label": "git pull on startup",
       "type": "shell",
-      "command": "git fetch && git pull",
+      "command": "bash ${workspaceFolder}/.vscode/gitpull.sh",
       "windows": {
-        "command": "git pull"
+        "command": "${workspaceFolder}/.vscode/gitpull.bat"
       },
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
         "showReuseMessage": false,
         "close": false
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
       },
       "problemMatcher": []
     }
