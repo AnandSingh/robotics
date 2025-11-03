@@ -3,12 +3,21 @@ from NexusAttachement import *
 
 
 def run_mission(robo, arm):
-    robo.set_speed_percentage(speed_percentage=50)
+    robo.set_speed_percentage(speed_percentage=75)
     robo.drive(-500)
     robo.pivot_turn(-55)
-    robo.drive(-75)
+    robo.drive(-150)
     arm.move_left(200)
-
+    robo.drive(150)
+    robo.drive(-30)
+    robo.pivot_turn(80)
+    arm.move_left(-150)
+    robo.drive(150)
+    robo.drive(-150)
+    robo.pivot_turn(50)
+    for i in range(3):
+        arm.move_left(300, speed_percentage=100)
+        arm.move_left(-300, speed_percentage=50)
     """
 
 
