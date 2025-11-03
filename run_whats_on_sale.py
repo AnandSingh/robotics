@@ -16,8 +16,8 @@ def run_mission(robo, arm):
     robo.drive(-150)
     robo.pivot_turn(50)
     for i in range(3):
-        arm.move_left(300, speed_percentage=100)
-        arm.move_left(-300, speed_percentage=50)
+        arm.move_left(150, speed_percentage=100)
+        arm.move_left(-150, speed_percentage=50)
     """
 
 
