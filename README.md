@@ -1,7 +1,6 @@
 # robotics
 
-
-### Addition code-server vm tricks 
+### Addition code-server vm tricks
 
 To fix the cloned VM has the same IP follow
 
@@ -22,7 +21,8 @@ git config --global user.email  "asingh.sqm@gmail.com"
 ```
 
 ### Adding a keyboard shortcuts
- Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
+
+Add a keyboard shortcut to run the programs that we write. Ctrl-Shift-P > Preferences: Open Keyboard Shortcuts (JSON). Edit the JSON to add the keyboard shortcut to run the task. Paste in the code below at the bottom of keybindings.json.
 
 ```
 [
@@ -51,10 +51,32 @@ git config --global user.email  "asingh.sqm@gmail.com"
 
 ## Run program on robot
 
-* Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program.
-* Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
+- Turn the robot on and ensure the keyboard shortcut ctrl-shift-L runs the command, which should also run their program.
+- Also, Ctrl-Shift-P > Tasks: Run task should pop up a menu with the correct entry. Watch the terminal and make sure the robot name is correct. If not, recheck that you completed step 11 correctly.
 
 ## mountind bluetooth usb to lxc container
+
 https://medium.com/@konpat/usb-passthrough-to-an-lxc-proxmox-15482674f11d
 
-## push from coder
+## uv set up
+
+#!/usr/bin/env bash
+set -euo pipefail
+if [ -d ".venv" ]; then
+echo "[OK] Environment already exists, skipping setup."
+echo "[INFO] Open a new terminal or run: source .venv/bin/activate"
+exit 0
+fi
+echo "[SETUP] Installing uv package manager..."
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+echo "[SETUP] Installing Python 3.12..."
+uv python install 3.12
+echo "[SETUP] Creating virtual environment..."
+uv venv .venv --python 3.12
+echo "[SETUP] Installing dependencies..."
+. .venv/bin/activate
+uv pip install -U pip
+[ -f requirements.txt ] && uv pip install -r requirements.txt || true
+echo "[OK] Environment ready!"
+echo "[INFO] Open a new terminal and the Python environment will activate automatically."
