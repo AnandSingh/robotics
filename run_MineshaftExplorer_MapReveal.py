@@ -22,12 +22,14 @@ def run_mission(robo, arm):
     robo.drive(150)
     robo.pivot_turn(90)
     robo.drive(-80)
-    robo.pivot_turn(10)
-    robo.drive(-80)
-    arm.move_left(200)
+    robo.pivot_turn(12)
+    robo.drive(-75)
+    robo.set_speed_percentage(speed_percentage=10)
+    arm.move_left(270)
+    robo.set_speed_percentage(speed_percentage=50)
     robo.drive(200)
-    robo.pivot_turn(-67)
-    robo.drive(600)
+    robo.pivot_turn(-50)
+    robo.drive(590)
 
 
 if __name__ == "__main__":
