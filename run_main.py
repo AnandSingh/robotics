@@ -6,6 +6,14 @@ from pybricks.tools import wait
 from NexusDrive import NexusDrive
 from NexusAttachement import NexusAttachement
 from run_forge import run_mission as forge_mission
+from run_MineshaftExplorer_MapReveal import run_mission as map_shaft_mission
+from run_SurfaceBrushing_SavlageOperation import (
+    run_mission as surface_operation_mission,
+)
+from run_whats_on_sale import run_mission as whats_on_sale_mission
+from run_StatueRebuild import run_mission as statue_rebuild_mission
+from run_who_lived_here import run_mission as who_lived_here_mission
+from cleaning_robot import clean_robot as cleaning_wheels
 
 # Initialize the hub
 hub = PrimeHub()
@@ -76,51 +84,6 @@ def show_icon(color):
         print("Unknown attachment")
 
 
-def run_map_reveal(robo, arm):
-    """Run the Map Reveal mission."""
-    print("Running MAP REVEAL mission")
-    # TODO: Add mission logic
-    pass
-
-
-def run_whats_on_sale(robo, arm):
-    """Run the What's on Sale mission."""
-    print("Running WHAT'S ON SALE mission")
-    # TODO: Add mission logic
-    pass
-
-
-def run_forge_mission(robo, arm):
-    """Run the Forge mission."""
-    print("Running FORGE mission")
-    # Call the existing forge mission function
-    forge_mission(robo, arm)
-
-
-def run_statue_rebuild(robo, arm):
-    """Run the Statue Rebuild mission."""
-    print("Running STATUE REBUILD mission")
-    # TODO: Add mission logic
-    pass
-
-
-def run_surface_brushing(robo, arm):
-    """Run the Surface Brushing mission."""
-    print("Running SURFACE BRUSHING mission")
-    # TODO: Add mission logic
-    pass
-
-
-# Mission dispatcher
-MISSION_RUNNERS = {
-    "map_reveal": run_map_reveal,
-    "forge": run_forge_mission,
-    "whats_on_sale": run_whats_on_sale,
-    "statue_rebuild": run_statue_rebuild,
-    "surface_brushing": run_surface_brushing,
-}
-
-
 def main():
     # Initialize robot and attachment
     robo = NexusDrive()
@@ -155,20 +118,23 @@ def main():
         # print("Pressed buttons:", pressed)
 
         # Run mission based on color + button
-        if Button.RIGHT in pressed and color == Color.MY_GREY:
-            run_map_reveal(robo, arm)
+        if Button.LEFT in pressed and color == Color.MY_GREY:
+            map_shaft_mission(robo, arm)
 
-        if Button.RIGHT in pressed and color == Color.MY_BLACK:
-            run_forge_mission(robo, arm)
+        if Button.LEFT in pressed and color == Color.MY_BLACK:
+            forge_mission(robo, arm)
 
-        if Button.RIGHT in pressed and color == Color.MY_YELLOW:
-            run_whats_on_sale(robo, arm)
+        if Button.LEFT in pressed and color == Color.MY_YELLOW:
+            whats_on_sale_mission(robo, arm)
 
-        if Button.RIGHT in pressed and color == Color.MY_WHITE:
-            run_statue_rebuild(robo, arm)
+        if Button.LEFT in pressed and color == Color.MY_WHITE:
+            statue_rebuild_mission(robo, arm)
 
-        if Button.RIGHT in pressed and color == Color.MY_RED:
-            run_surface_brushing(robo, arm)
+        if Button.LEFT in pressed and color == Color.MY_RED:
+            surface_operation_mission(robo, arm)
+
+        if Button.RIGHT in pressed:
+            cleaning_wheels(robo, arm)
 
         # Stop motors after mission
         robo.brake()
