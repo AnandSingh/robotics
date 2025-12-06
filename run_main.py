@@ -7,8 +7,8 @@ from NexusDrive import NexusDrive
 from NexusAttachement import NexusAttachement
 from run_forge import run_mission as forge_mission
 from run_MineshaftExplorer_MapReveal import run_mission as map_shaft_mission
-from run_SurfaceBrushing_SavlageOperation import (
-    run_mission as surface_operation_mission,
+from run_SurfaceBrushing_SavlageOperation_StatueRebuild import (
+    run_mission as surface_operation_rebuild_mission,
 )
 from run_whats_on_sale import run_mission as whats_on_sale_mission
 from run_StatueRebuild import run_mission as statue_rebuild_mission
@@ -131,7 +131,7 @@ def main():
             statue_rebuild_mission(robo, arm)
 
         if Button.LEFT in pressed and color == Color.MY_RED:
-            surface_operation_mission(robo, arm)
+            surface_operation_rebuild_mission(robo, arm)
 
         if Button.RIGHT in pressed:
             cleaning_wheels(robo, arm)

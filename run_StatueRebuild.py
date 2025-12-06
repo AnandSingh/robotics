@@ -12,6 +12,7 @@ def run_mission(robo, arm):
     robo.pivot_turn(-18)
     robo.drive(-30)
     arm.move_left(-500)
+    wait(30)
     arm.move_left(500)
     robo.drive(150)
     robo.pivot_turn(40)

@@ -29,16 +29,21 @@ def run_mission(robo, arm):
     robo.pivot_turn(16)
     robo.drive(-80)
     arm.move_right(-267)
-    robo.set_speed_percentage(speed_percentage=100)
+    robo.set_speed_percentage(speed_percentage=50)
     robo.drive(65)
     arm.move_right(267)
     robo.pivot_turn(-85)
-    robo.drive(-90)
+    robo.drive(-70)
     robo.pivot_turn(80)
     robo.drive(-260)
-    robo.drive(500)
+    robo.drive(200)
+    robo.pivot_turn(-15)
+    robo.drive(-300)
+    arm.move_left
+    """
     robo.pivot_turn(-90)
     robo.drive(100)
+    """
     """
     robo.drive(-100)
     robo.drive(150)
