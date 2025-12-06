@@ -4,59 +4,19 @@ from NexusAttachement import *
 
 def run_mission(robo, arm):
     robo.set_speed_percentage(speed_percentage=75)
-    robo.drive(-500)
-    robo.pivot_turn(-55)
-    robo.drive(-150)
+    robo.drive(-200)
+    robo.pivot_turn(-40)
+    robo.drive(-250)
+    robo.set_speed_percentage(speed_percentage=25)
+    robo.drive(-60)
+    arm.move_left(250)
+    robo.drive(100)
+    arm.move_left(-200)
+    robo.drive(65)
     arm.move_left(200)
-    robo.drive(150)
-    robo.drive(-30)
-    robo.pivot_turn(80)
-    arm.move_left(-150)
-    robo.drive(150)
-    robo.drive(-150)
-    robo.pivot_turn(50)
-    for i in range(3):
-        arm.move_left(150, speed_percentage=100)
-        arm.move_left(-150, speed_percentage=50)
-    """
-
-
-    robo.drive(340)
-    arm.move_left(-250)  # pull down 3Dmovie
-    arm.move_left(250)
-    robo.drive(-170)
-    robo.pivot_turn(30)
-    robo.drive(610)
-    robo.pivot_turn(60)
-    robo.drive(385)
-    robo.pivot_turn(-90)
-    robo.drive(10)
-    arm.move_left(-300)
-    arm.move_left(250)
-    robo.drive(-120)
-    robo.pivot_turn(-70)
-    robo.drive(430)
-    robo.pivot_turn(20)
-    arm.move_left(-250)
-    arm.move_left(50)
-    arm.move_left(-250)
-    arm.move_left(50)
-    """
-    """
-    
-    robo.drive(80)
-    robo.pivot_turn(60)
-    robo.drive(225)
-    robo.pivot_turn(-45)
-    robo.drive(390)
-    robo.pivot_turn(-60)
-    robo.drive(-15)
-    arm.move_left(270)
-    robo.drive(-15)
-    arm.move_left(-250)
-    arm.move_left(250)
-    """
-
+    robo.pivot_turn(-20)
+    robo.set_speed_percentage(speed_percentage=75)
+    robo.drive(400)
     robo.brake()
 
 
