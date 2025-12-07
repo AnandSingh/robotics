@@ -130,7 +130,7 @@ def main():
         if Button.LEFT in pressed and color == Color.MY_WHITE:
             statue_rebuild_mission(robo, arm)
 
-        if Button.LEFT in pressed and color == Color.RED:
+        if Button.LEFT in pressed and color == Color.MY_RED:
             surface_operation_rebuild_mission(robo, arm)
 
         if Button.RIGHT in pressed:
