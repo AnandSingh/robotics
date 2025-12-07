@@ -7,13 +7,15 @@ def run_mission(robo, arm):
 
     robo.drive(-600)
     robo.pivot_turn(-12)
-    robo.drive(-80)
+    robo.drive(-70)
     arm.move_left(100)
-    robo.pivot_turn(12)
-    robo.drive(20)
+    robo.pivot_turn(20)
+    robo.drive(15)
     robo.pivot_turn(10)
     arm.move_left(-130)
-    robo.drive(700)
+    robo.drive(150)
+    robo.pivot_turn(-35)
+    robo.drive(600)
 
 
 if __name__ == "__main__":
