@@ -64,13 +64,13 @@ def scan_colors(sensor):
 
 def show_icon(color):
     """Display icon on hub based on detected color."""
-    elif color == Color.  GREY:
+    if color == Color.MY_GREY:
         hub.display.icon(Icon.ARROW_LEFT)
         print("GREY - Map Reveal")
-    elif color == Color.BLACK:
+    elif color == Color.MY_BLACK:
         hub.display.icon(Icon.ARROW_LEFT)
         print("BLACK - Forge")
-    elif color == Color.YELLOW:
+    elif color == Color.MY_YELLOW:
         hub.display.icon(Icon.ARROW_LEFT)
         print("YELLOW - What's on Sale")
     elif color == Color.MY_WHITE:
