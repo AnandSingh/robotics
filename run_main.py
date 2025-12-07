@@ -64,13 +64,13 @@ def scan_colors(sensor):
 
 def show_icon(color):
     """Display icon on hub based on detected color."""
-    if color == Color.MY_GREY:
+    elif color == Color.  GREY:
         hub.display.icon(Icon.ARROW_LEFT)
         print("GREY - Map Reveal")
-    elif color == Color.MY_BLACK:
+    elif color == Color.BLACK:
         hub.display.icon(Icon.ARROW_LEFT)
         print("BLACK - Forge")
-    elif color == Color.MY_YELLOW:
+    elif color == Color.YELLOW:
         hub.display.icon(Icon.ARROW_LEFT)
         print("YELLOW - What's on Sale")
     elif color == Color.MY_WHITE:
@@ -130,7 +130,7 @@ def main():
         if Button.LEFT in pressed and color == Color.MY_WHITE:
             statue_rebuild_mission(robo, arm)
 
-        if Button.LEFT in pressed and color == Color.MY_RED:
+        if Button.LEFT in pressed and color == Color.RED:
             surface_operation_rebuild_mission(robo, arm)
 
         if Button.RIGHT in pressed:
