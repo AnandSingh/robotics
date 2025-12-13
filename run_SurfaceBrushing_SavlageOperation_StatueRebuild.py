@@ -2,6 +2,11 @@ from NexusDrive import *
 from NexusAttachement import *
 
 
+def run_misson(robo, arm):
+    run_mission1(robo, arm)
+    run_mission2(robo, arm)
+
+
 def run_mission1(robo, arm):
     # robo.straight_drive(100)
     print("test")
@@ -84,5 +89,7 @@ def run_mission2(robo, arm):
 if __name__ == "__main__":
     robo = NexusDrive()
     arm = NexusAttachement()
-    run_mission1(robo, arm)
-    run_mission2(robo, arm)
+
+    # run_mission1(robo, arm)
+    # run_mission2(robo, arm)
+    run_mission(robo, arm)
