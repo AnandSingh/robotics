@@ -2,7 +2,7 @@ from NexusDrive import *
 from NexusAttachement import *
 
 
-def run_misson(robo, arm):
+def run_mission(robo, arm):
     run_mission1(robo, arm)
     run_mission2(robo, arm)
 
