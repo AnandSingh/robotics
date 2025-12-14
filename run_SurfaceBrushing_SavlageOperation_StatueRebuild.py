@@ -46,7 +46,7 @@ def run_mission1(robo, arm):
 def run_mission2(robo, arm):
     robo.drive(-215)
     robo.pivot_turn(24)
-    robo.drive(-287)
+    robo.drive(-272)
     robo.pivot_turn(-90)
     robo.drive(-195)
     robo.pivot_turn(59)
