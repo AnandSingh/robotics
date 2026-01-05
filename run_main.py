@@ -11,9 +11,11 @@ from run_SurfaceBrushing_SavlageOperation_StatueRebuild import (
     run_mission as surface_operation_rebuild_mission,
 )
 from run_whats_on_sale import run_mission as whats_on_sale_mission
-from run_StatueRebuild import run_mission as statue_rebuild_mission
+from run_StatueRebuild_old import run_mission as statue_rebuild_mission
 from run_who_lived_here import run_mission as who_lived_here_mission
+from run_statue_rebuild_1 import run_mission as statue_rebuild_mission_1
 from cleaning_robot import clean_robot as cleaning_wheels
+from Drive_to_Base_Blue import run_mission as drive_to_blue_base
 
 # Initialize the hub
 hub = PrimeHub()
@@ -30,7 +32,8 @@ Color.MY_BLACK = Color(h=180, s=66, v=3)  # Forge
 Color.MY_YELLOW = Color(h=52, s=70, v=99)  # What's on Sale
 Color.MY_WHITE = Color(h=0, s=0, v=100)  # Statue Rebuild
 Color.MY_RED = Color(h=353, s=87, v=67)  # Surface Brushing
-
+Color.MY_GREEN = Color(h=158, s=68, v=17)
+Color.MY_PEACH = Color(h=50, s=46, v=68)
 # Color to mission mapping
 COLOR_MISSIONS = {
     Color.MY_GREY: "map_reveal",
@@ -38,6 +41,8 @@ COLOR_MISSIONS = {
     Color.MY_YELLOW: "whats_on_sale",
     Color.MY_WHITE: "statue_rebuild",
     Color.MY_RED: "surface_brushing",
+    Color.MY_GREEN: "statue_rebuild_1",
+    Color.MY_PEACH: "drive_to_blue_base",
 }
 
 
@@ -49,6 +54,8 @@ def set_detectable_colors(sensor):
         Color.MY_YELLOW,
         Color.MY_WHITE,
         Color.MY_RED,
+        Color.MY_GREEN,
+        Color.MY_PEACH,
     )
     sensor.detectable_colors(my_colors)
 
@@ -79,6 +86,12 @@ def show_icon(color):
     elif color == Color.MY_RED:
         hub.display.icon(Icon.ARROW_LEFT)
         print("RED - Surface Brushing")
+    elif color == Color.MY_GREEN:
+        hub.display.icon(Icon.ARROW_LEFT)
+        print("GREEN - Statue Rebuild 1")
+    elif color == Color.MY_PEACH:
+        hub.display.icon(Icon.ARROW_LEFT)
+        print("TAN - Drive to blue base")
     else:
         hub.display.icon(Icon.QUESTION_MARK)
         print("Unknown attachment")
@@ -132,6 +145,12 @@ def main():
 
         if Button.LEFT in pressed and color == Color.MY_RED:
             surface_operation_rebuild_mission(robo, arm)
+
+        if Button.LEFT in pressed and color == Color.MY_GREEN:
+            statue_rebuild_mission_1(robo, arm)
+
+        if Button.LEFT in pressed and color == Color.MY_PEACH:
+            drive_to_blue_base(robo, arm)
 
         if Button.RIGHT in pressed:
             cleaning_wheels(robo, arm)

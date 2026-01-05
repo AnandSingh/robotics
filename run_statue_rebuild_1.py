@@ -34,8 +34,10 @@ def run_mission(robo, arm):
     arm.move_left(200)
     arm.move_left(-200)
     robo.drive(100)
-    robo.pivot_turn(-80)
+    robo.pivot_turn(75)
     robo.drive(-550)
+    robo.pivot_turn(-30)
+    robo.drive(-300)
 
 
 if __name__ == "__main__":
