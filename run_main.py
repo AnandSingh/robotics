@@ -16,6 +16,7 @@ from run_who_lived_here import run_mission as who_lived_here_mission
 from run_statue_rebuild_1 import run_mission as statue_rebuild_mission_1
 from cleaning_robot import clean_robot as cleaning_wheels
 from Drive_to_Base_Blue import run_mission as drive_to_blue_base
+from run_heavy_lifting import run_mission as heavy_lifting_mission
 
 # Initialize the hub
 hub = PrimeHub()
@@ -39,7 +40,7 @@ COLOR_MISSIONS = {
     Color.MY_GREY: "map_reveal",
     Color.MY_BLACK: "forge",
     Color.MY_YELLOW: "whats_on_sale",
-    Color.MY_WHITE: "statue_rebuild",
+    Color.MY_WHITE: "heavy_lifting",
     Color.MY_RED: "surface_brushing",
     Color.MY_GREEN: "statue_rebuild_1",
     Color.MY_PEACH: "drive_to_blue_base",
@@ -82,7 +83,7 @@ def show_icon(color):
         print("YELLOW - What's on Sale")
     elif color == Color.MY_WHITE:
         hub.display.icon(Icon.ARROW_LEFT)
-        print("WHITE - Statue Rebuild")
+        print("WHITE - Heavy Lifting")
     elif color == Color.MY_RED:
         hub.display.icon(Icon.ARROW_LEFT)
         print("RED - Surface Brushing")
@@ -141,7 +142,7 @@ def main():
             whats_on_sale_mission(robo, arm)
 
         if Button.LEFT in pressed and color == Color.MY_WHITE:
-            statue_rebuild_mission(robo, arm)
+            heavy_lifting_mission(robo, arm)
 
         if Button.LEFT in pressed and color == Color.MY_RED:
             surface_operation_rebuild_mission(robo, arm)

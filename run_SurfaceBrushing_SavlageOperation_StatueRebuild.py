@@ -3,10 +3,6 @@ from NexusAttachement import *
 
 
 def run_mission(robo, arm):
-    run_mission1(robo, arm)
-
-
-def run_mission1(robo, arm):
     # robo.straight_drive(100)
     print("test")
     # arm.move_left(300)
