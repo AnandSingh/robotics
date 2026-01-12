@@ -11,7 +11,7 @@ from run_SurfaceBrushing_SavlageOperation_StatueRebuild import (
     run_mission as surface_operation_rebuild_mission,
 )
 from run_whats_on_sale import run_mission as whats_on_sale_mission
-from run_StatueRebuild_old import run_mission as statue_rebuild_mission
+from heavy_lifting import run_mission as Heavy_lifting_mission
 from run_who_lived_here import run_mission as who_lived_here_mission
 from run_statue_rebuild_1 import run_mission as statue_rebuild_mission_1
 from cleaning_robot import clean_robot as cleaning_wheels
