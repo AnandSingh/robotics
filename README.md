@@ -80,3 +80,6 @@ uv pip install -U pip
 [ -f requirements.txt ] && uv pip install -r requirements.txt || true
 echo "[OK] Environment ready!"
 echo "[INFO] Open a new terminal and the Python environment will activate automatically."
+
+
+# Test Commit
