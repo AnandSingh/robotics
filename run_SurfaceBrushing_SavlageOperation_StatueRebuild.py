@@ -13,18 +13,36 @@ def run_mission(robo, arm):
 
     # robo.pivot_turn(-76)
 
-    arm.move_left(124)
     robo.drive(-618)
-    robo.pivot_turn(-100)
-    robo.pivot_turn(60)
     robo.pivot_turn(-150)
-    arm.move_left(-124)
+    robo.pivot_turn(120)
+    robo.pivot_turn(-150)
+    arm.move_left(100)
+    robo.drive(-550)
+    robo.pivot_turn(-69)
+    robo.drive(-150)
+    arm.move_right(-200)
+    robo.drive(150)
+    arm.move_right(200)
+    robo.pivot_turn(-80)
+    robo.drive(-100)
+    robo.pivot_turn(78)
+    robo.drive(-400)
+    robo.drive(100)
+    robo.pivot_turn(-30)
+    robo.drive(550)
+    """
+    robo.pivot_turn(-90)
+    arm.move_left(-200)
+
+    robo.pivot_turn(-85)
+
     robo.drive(-590)
     robo.pivot_turn(-67)
     robo.drive(-30)
     robo.pivot_turn(-10)
     robo.drive(85)
-    robo.pivot_turn(14)
+    robo.pivot_turn(20)
     robo.drive(-62)
     arm.move_right(-267)
     robo.set_speed_percentage(speed_percentage=50)
@@ -35,7 +53,7 @@ def run_mission(robo, arm):
     robo.pivot_turn(80)
     robo.drive(-230)
     robo.drive(500)
-
+    """
     """
     robo.pivot_turn(-90)
     robo.drive(100)

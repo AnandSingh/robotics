@@ -16,6 +16,7 @@ from run_statue_rebuild_1 import run_mission as statue_rebuild_mission_1
 from cleaning_robot import clean_robot as cleaning_wheels
 from Drive_to_Base_Blue import run_mission as drive_to_blue_base
 from run_heavy_lifting import run_mission as heavy_lifting_mission
+from run_deliver_artifact import run_mission as deliver_artifacts
 
 # Initialize the hub
 hub = PrimeHub()
@@ -151,6 +152,9 @@ def main():
 
         if Button.LEFT in pressed and color == Color.MY_PEACH:
             drive_to_blue_base(robo, arm)
+
+        if Button.RIGHT in pressed and color == Color.MY_PEACH:
+            deliver_artifacts(robo, arm)
 
         if Button.RIGHT in pressed:
             cleaning_wheels(robo, arm)
