@@ -24,6 +24,9 @@ class NexusAttachement:
         await self.left.run_angle(speed, angle, then, wait)
         # print("Left Speed = {}".format(self.left.speed()))
 
+    def check_right_load(self):
+        return self.right.load()
+
     def move_left(
         self,
         angle=0,
@@ -32,7 +35,7 @@ class NexusAttachement:
         wait=True,
     ):
         speed = get_speed_mmsec(speed_percentage)
-        print("Left Speed = {}".format(self.left.speed()))
+        # print("Left Speed = {}".format(self.left.speed()))
         self.left.run_angle(speed, angle, then, wait)
         # print("Left Speed = {}".format(self.left.speed()))
 
@@ -63,7 +66,7 @@ class NexusAttachement:
         wait=True,
     ):
         speed = get_speed_mmsec(speed_percentage)
-        print("Right Speed = {}".format(self.right.speed()))
+        # print("Right Speed = {}".format(self.right.speed()))
         self.right.run_angle(speed, angle, then, wait)
 
     def move_right_time(
