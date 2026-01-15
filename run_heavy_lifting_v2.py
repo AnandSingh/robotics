@@ -35,7 +35,8 @@ def run_mission(robo, arm):
         print("Load increased from {} to {}".format(old_load, new_load))
         print("Heavy lifting detected!")
         robo.pivot_turn(20)
-        robo.drive(-400)
+        robo.drive(-420)
+        robo.pivot_turn(-50)
 
     else:
         print(
