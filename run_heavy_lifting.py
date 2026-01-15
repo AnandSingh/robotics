@@ -2,6 +2,7 @@ from NexusDrive import *
 from NexusAttachement import *
 
 
+# alingn robot
 def run_mission(robo, arm):
     # robo.straight_drive(100)
     print("test")
@@ -19,9 +20,9 @@ def run_mission(robo, arm):
     robo.pivot_turn(-40)
     arm.move_left(-100)
     arm.move_left(200)
-    robo.pivot_turn(50)
+    robo.pivot_turn(60)
     robo.set_speed_percentage(speed_percentage=90)
-    robo.drive(720)
+    robo.drive(770)
 
 
 if __name__ == "__main__":
