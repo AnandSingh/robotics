@@ -36,9 +36,7 @@ def run_mission(robo, arm):
     robo.drive(100)
     robo.pivot_turn(70)
     robo.set_speed_percentage(speed_percentage=100)
-    robo.drive(-650)
-    robo.pivot_turn(-30)
-    robo.drive(150)
+    robo.drive(-700)
 
 
 if __name__ == "__main__":
