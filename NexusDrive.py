@@ -23,9 +23,17 @@ class NexusDrive:
             wheel_diameter=WHEEL_DIAMETER,
             axle_track=AXLE_TRACK,
         )
-        print("using Gyro=", ENABLE_GYRO)
+        print("using Gyro=", True)
         self.use_gyro(ENABLE_GYRO)
         self.hub = PrimeHub()
+        self.hub.light.on(Color.ORANGE)
+        wait(1000)  # Wait for 2 seconds
+        # 2. Check for Stationary State
+        # This ensures the robot isn't being bumped or moved when calibration
+        # or a precision maneuver is supposed to start.
+        # while not self.hub.imu.stationary():
+        #    self.hub.light.on(Color.RED)
+        #    wait(100)  # Check every 100ms
         self.set_speed_percentage()
         self.watch = StopWatch()
         self.watch.reset()
