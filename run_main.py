@@ -94,7 +94,7 @@ def show_icon(color):
         hub.display.icon(Icon.ARROW_LEFT)
         print("TAN - Drive to blue base")
     else:
-        hub.display.icon(Icon.QUESTION_MARK)
+        hub.display.icon(Icon.HEART)
         print("Unknown attachment")
 
 
